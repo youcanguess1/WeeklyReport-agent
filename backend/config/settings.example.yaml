@@ -1,0 +1,42 @@
+app:
+  name: WeeklyReport Agent API
+  environment: local
+
+model:
+  provider: openai-compatible
+  base_url: https://api.example.com/v1
+  api_key_env: OPENAI_SHARED_API_KEY
+  chat:
+    model: your-model-name
+  vision:
+    model: your-model-name
+    base_url: https://api.example.com/v1
+    api_key_env: OPENAI_VISION_API_KEY
+
+storage:
+  artifact_root: data/artifacts
+  sqlite_path: data/sqlite/weekly_report.db
+
+task_runner:
+  backend: local
+  max_workers: 2
+  queue_name: weekly-report-local
+  redis_url: null
+
+
+observability:
+  provider: none
+  host: http://localhost:3000
+  public_key_env: LANGFUSE_LOCAL_PUBLIC_KEY
+  secret_key_env: LANGFUSE_LOCAL_SECRET_KEY
+  environment: local
+  project_name: weekly-report-local
+  capture_input: false
+  capture_output: false
+
+logging:
+  enabled: true
+  path: data/logs/weekly_report.log.jsonl
+  level: INFO
+  max_bytes: 10485760
+  backup_count: 5

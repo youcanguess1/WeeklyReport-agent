@@ -1,0 +1,39 @@
+{
+  "name": "weekly-report-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=24" },
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "build": "tsc --noEmit && node scripts/build.mjs",
+    "preview": "node scripts/serve.mjs --preview",
+    "test": "node scripts/test.mjs",
+    "test:security": "node security/check-dependencies.mjs"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^6.0.1",
+    "antd": "^5.28.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-markdown": "^10.1.0",
+    "react-router-dom": "^7.18.2",
+    "remark-gfm": "4.0.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "4.3.5",
+    "@testing-library/jest-dom": "6.9.1",
+    "@testing-library/react": "^16.3.0",
+    "@types/node": "^24.19.2",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitest/expect": "4.1.12",
+    "@vitest/spy": "4.1.12",
+    "chai": "^5.3.3",
+    "esbuild": "0.28.2",
+    "jsdom": "^26.1.0",
+    "postcss": "8.5.33",
+    "tailwindcss": "4.3.5",
+    "typescript": "^5.9.2"
+  }
+}
